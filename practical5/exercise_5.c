@@ -1,10 +1,11 @@
 #include <stdio.h>
 
-void fibonacci_step(int Fn, int Fn_minus_1) {
+void fibonacci_step(int *a, int *b) {
     // Update Fibonacci values
-    int Fn_minus_2 = Fn_minus_1;
-    Fn = Fn + Fn_minus_2;
-    Fn_minus_1 = Fn_minus_2; // Update Fn−1 to the previous Fn
+    int  next;
+    next  =*a + *b;
+    *b = *a;
+    *a = next;	 // Update Fn−1 to the previous Fn
 }
 
 void fibonacci_series(int n) {
@@ -13,22 +14,20 @@ void fibonacci_series(int n) {
         return;
     }
 
-    int Fn_minus_2 = 0; // F0
-    int Fn_minus_1 = 1; // F1
-    int Fn = 0;
+    int f0 = 0; // F0
+    int f1 = 1; // F1
 
     if (n >= 0) {
-        printf("%d ", Fn_minus_2); // Print F0
+        printf("%d ", f0); // Print F0
     }
     if (n >= 1) {
-        printf("%d ", Fn_minus_1); // Print F1
+        printf("%d ", f1); // Print F1
     }
 
     for (int i = 2; i <= n; i++) {
-        fibonacci_step(&Fn, &Fn_minus_1);
-        printf("%d ", Fn);
-        Fn_minus_2 = Fn_minus_1; // Update Fn−2 to the previous Fn−1
-    }
+        fibonacci_step(&f1, &f0);
+        printf("%d ", f1);
+            }
 
     printf("\n");
 }
@@ -38,5 +37,5 @@ int main() {
     printf("Enter the value of n: ");
     scanf("%d", &n);
     fibonacci_series(n);
-    return 0;
-}
+    
+    }
