@@ -1,0 +1,40 @@
+# Practical 7 code instructions
+## Make directory and create file
+mkdir practical07
+nano prac7.c
+nano prac7_1.c
+
+
+## Compile
+
+gcc -o p7 prac7.c -lm
+gcc -o p7_1 prac7_1.c -lm
+## Execute
+
+./p7
+./p7_1
+
+## Results
+##### part1 
+Enter a value for order :  15
+^[[D1.0000000000000000
+1.0000000000000000
+0.5000000000000000
+0.1666666666666667
+0.0416666666666667
+0.0083333333333333
+0.0013888888888889
+0.0001984126984127
+0.0000248015873016
+0.0000027557319224
+0.0000002755731922
+0.0000000250521084
+0.0000000020876757
+0.0000000005175840
+0.0000000007818943
+e is estimated as 3.7182818295856470 , with differnece 1.000000e+00
+
+#### part2
+
+[sp102@sciprog practical07]$ ./p7_1
+11111
